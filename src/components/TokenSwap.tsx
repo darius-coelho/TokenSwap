@@ -48,9 +48,15 @@ const TokenSwap: React.FC = () => {
       getTokenPrice(targetToken),
     ]);
     
-    setSourceTokenPrice(sourcePrice);
-    setTargetTokenPrice(targetPrice);
     
+    // If the price is valid, update the state. Negative price means that the API call failed
+    if(sourcePrice >= 0) {
+      setSourceTokenPrice(sourcePrice);
+    }
+    if(targetPrice >= 0) {
+      setTargetTokenPrice(targetPrice);
+    }
+
     setLoading(false);
   };
 

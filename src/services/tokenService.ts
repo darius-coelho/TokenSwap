@@ -38,6 +38,6 @@ export const getTokenPrice = async (token: Token): Promise<number> => {
     return priceInfo.unitPrice;
   } catch (error) {
     console.error('Error fetching token info:', error);
-    return 0;
+    return -1;
   }
 }
